@@ -81,4 +81,5 @@ public class SecondFragment extends Fragment {
         TextView textView=getView().findViewById(R.id.nameTextView);
         textView.setText(name);
     }
+
 }
