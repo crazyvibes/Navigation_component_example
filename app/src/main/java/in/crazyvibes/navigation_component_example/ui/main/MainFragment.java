@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import in.crazyvibes.navigation_component_example.R;
 
@@ -38,10 +39,11 @@ public class MainFragment extends Fragment {
         // TODO: Use the ViewModel
 
         Button button =getView().findViewById(R.id.mainButton);
+        final EditText editText =getView().findViewById(R.id.namText);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(MainFragmentDirections.mainIntoSecond());
+                Navigation.findNavController(v).navigate(MainFragmentDirections.mainIntoSecond().setUserName(editText.getText().toString()));
             }
         });
     }
